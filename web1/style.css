@@ -1,0 +1,374 @@
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0
+
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body {
+  
+    font-family: 'Roboto', sans-serif;
+}
+
+header{
+    height: 100vh !important;
+    justify-content: center;
+    align-items: center;
+    background: url(img/principal.png) no-repeat center;
+    background-position: center center;
+    background-size: cover;
+}
+
+.boton-carta{
+    top: 25%;
+    left: 10%;
+    position: relative; 
+    display: inline-block;
+    padding: 15px 30px;
+    letter-spacing: 6px;
+    font-size: 24px;
+    overflow: hidden;
+    transition: 0.2s;
+    text-align: center;
+    background-color: transparent;
+    border-radius: 30%;
+    
+}
+
+.boton-carta a{
+    text-decoration: none;
+    color: lightyellow;
+    
+}
+
+.boton-carta:hover{
+    background-color: #afb483b0;
+    box-shadow: 0 0 10px #837986, 0 0 40px #837986, 0 0 80px #837986;
+    transition-delay: 1s;
+}
+
+.boton-carta span{
+    position: absolute;
+    display: block;
+}
+
+#span1{
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #837986);
+}
+
+.boton-carta:hover #span1{
+    left: 100%;
+    transition: 1s;
+}
+
+#span3{
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(270deg, transparent, #837986);
+    
+}
+
+.boton-carta:hover #span3{
+    right: 100%;
+    transition: 1s;
+    transition-delay: 0.5s;
+}
+
+#span2{
+    top: -100%;
+    right: 0%;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #837986);
+}
+
+.boton-carta:hover #span2{
+    top: 100%;
+    transition: 1s;
+    transition-delay: 0.25s;
+}
+
+#span4{
+    bottom: -100%;
+    left: 0%;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #837986);
+}
+
+.boton-carta:hover #span4{
+    bottom: 100%;
+    transition: 1s;
+    transition-delay: 0.75s;
+}
+
+
+
+header img{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+    transform: scale(1);
+}
+
+
+.grid-layout{
+
+    display: grid;
+    margin: 0;
+    grid-template-rows:repeat(auto, auto, auto, auto, auto);
+    align-content: flex-end;
+
+    
+    
+
+}
+
+.content{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.carta-page img{
+    margin: 0;
+    padding: 0;
+    width: 250px;
+
+}
+
+
+/*---Nav---*/
+
+.container {
+    max-width: 1050px;
+    width: 90%;
+    float: right;
+    margin: auto;
+  }
+  
+  .navbar {
+    width: 100%;
+    float: right;
+    box-shadow: 0 1px 4px rgb(146 161 176 / 15%);
+  }
+  
+  .nav-container {
+    display: flex;
+    float:right;
+    justify-content: space-between;
+    align-items:center;
+    height: 62px;
+  }
+  
+  .navbar .menu-items {
+    display: flex;
+    float: left;
+  }
+  
+  .navbar .nav-container li {
+    list-style: none;
+    float: left;
+    
+   
+  }
+  
+  .navbar .nav-container a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 30px;
+    padding: 0.7rem;
+    box-shadow: inset 0 0 0 0 #b41a22;
+    margin: 20px;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+  }
+  
+  .navbar .nav-container a:hover{
+    box-shadow: inset 200px 0 0 0 #b41a22;
+    color: white;
+  }
+  
+  .nav-container {
+    display: block;
+    position: fixed;
+    float: right;
+    left: auto;
+    right: 25px;
+    height: 60px;
+  }
+  
+  .nav-container .checkbox {
+    position:fixed;
+    float: right;
+    display: flex;
+    height: 32px;
+    width: 32px;
+    top: 25px;
+    left: auto;
+    right: 40px;
+    z-index: 5;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .nav-container .hamburger-lines {
+    display:flex;
+    height: 32px;
+    width: 42px;
+    float: right;
+    position: fixed;
+    top: 38px;
+    left: auto;
+    right: 40px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .nav-container .hamburger-lines .line {
+    display: fixed;
+    height: 4px;
+    width: 100%;
+    border-radius: 10px;
+    background: white;
+    float: right;
+  }
+  
+  .nav-container .hamburger-lines .line1 {
+    transform-origin: 0% 0%;
+    transition: transform 0.4s ease-in-out;
+    float: right;
+  }
+  
+  .nav-container .hamburger-lines .line2 {
+    transition: transform 0.2s ease-in-out;
+    float: right;
+  }
+  
+  .nav-container .hamburger-lines .line3 {
+    transform-origin: 0% 100%;
+    transition: transform 0.4s ease-in-out;
+    float: right;
+  }
+  
+  .navbar .menu-items {
+    padding-top: 25px;
+    height: 100vh;
+    width: 130%;
+    transform: translate(-150%);
+    display: flex;
+    flex-direction: row;
+    margin-left: -40px;
+    margin-right: 40px;
+    padding-left: -100px;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: opacity 300ms ease-in, visibility 0s ease-in 300ms;
+    transition: opacity 300ms ease-in, visibility 0s ease-in 300ms;
+    text-align: left;
+  }
+  
+  .navbar .menu-items li {
+    margin-bottom: 1.2rem;
+    font-size: 2.5rem;
+    font-weight: 500;
+    
+  }
+  
+  
+  .logo {
+    position: fixed;
+    float: left;
+    top: 25px;
+    right: 24px;
+    left: 40px;
+    font-size: 1.2rem;
+    color: white;
+  }
+  
+  .nav-container input[type="checkbox"]:checked ~ .menu-items {
+    transform: translateX(0);
+    visibility: visible;
+    opacity: 1;
+    -webkit-transition-delay: 300ms;
+    transition-delay: 300ms;
+  }
+  
+  .nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
+    transform: rotate(45deg);
+  }
+  
+  .nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
+    transform: scaleY(0);
+  }
+  
+  .nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
+    transform: rotate(-45deg);
+  }
+  
+  .nav-container input[type="checkbox"]:checked ~ .logo{
+    display: block;
+  }
+
+
+/*
+
+.inicio-page{
+    width: 100vw;
+    height: 900px;
+    overflow: hidden;
+}
+
+.inicio-page img{
+    width: 100%;
+    height: 800px;
+}
+
+.nosotros-page{
+    display: flex;
+
+    width: 100%;
+    height: 500px;
+    border: 1px solid black;
+    background-color: aliceblue;
+}
+*/
+.nosotros-page img{
+    /*Ajusta la imagen para que no se salga de su contenedor*/
+    
+}
+/*
+
+
+.reservas-page{
+
+    border: 1px solid black;
+    background-color: red
+}
+
+.contacto-page{
+
+    
+    border: 1px solid black;
+    background-color: red
+
+}
+*/
