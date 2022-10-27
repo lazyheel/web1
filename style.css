@@ -3,7 +3,10 @@
 * {
     margin: 0;
     padding: 0;
-    border: 0
+    border: 0;
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 
 }
 
@@ -11,24 +14,33 @@ html{
     scroll-behavior:smooth;
 }
 
+header{
+  height:100vh;
+}
+
 body {
   
-    font-family: 'Roboto', sans-serif;
+  font-family: "Bowlby One SC";
 }
 
-header{
-    height: 100vh !important;
-    justify-content: center;
-    align-items: center;
-    background: url(img/principal.png) no-repeat center;
-    background-position: center center;
-    background-size: cover;
-}
+
+  #background-video {
+    height:100vh;
+    width: 100vw;
+    object-fit:cover;
+    position:relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+
 
 .boton-carta{
-    top: 25%;
+    top: 45%;
     left: 10%;
-    position: relative; 
+    position: absolute; 
     display: inline-block;
     padding: 15px 30px;
     letter-spacing: 6px;
@@ -48,8 +60,8 @@ header{
 }
 
 .boton-carta:hover{
-    background-color: #afb483b0;
-    box-shadow: 0 0 10px #837986, 0 0 40px #837986, 0 0 80px #837986;
+    background-color: #b41a22;
+    box-shadow: 0 0 10px #b41a22, 0 0 40px #b41a22, 0 0 80px #b41a22;
     transition-delay: 1s;
 }
 
@@ -63,7 +75,7 @@ header{
     left: -100%;
     width: 100%;
     height: 3px;
-    background: linear-gradient(90deg, transparent, #837986);
+    background: linear-gradient(90deg, transparent, #b41a22);
 }
 
 .boton-carta:hover #span1{
@@ -76,7 +88,7 @@ header{
     right: -100%;
     width: 100%;
     height: 3px;
-    background: linear-gradient(270deg, transparent, #837986);
+    background: linear-gradient(270deg, transparent, #b41a22);
     
 }
 
@@ -91,7 +103,7 @@ header{
     right: 0%;
     width: 2px;
     height: 100%;
-    background: linear-gradient(180deg, transparent, #837986);
+    background: linear-gradient(180deg, transparent, #b41a22);
 }
 
 .boton-carta:hover #span2{
@@ -105,7 +117,7 @@ header{
     left: 0%;
     width: 2px;
     height: 100%;
-    background: linear-gradient(360deg, transparent, #837986);
+    background: linear-gradient(360deg, transparent, #b41a22);
 }
 
 .boton-carta:hover #span4{
@@ -114,15 +126,6 @@ header{
     transition-delay: 0.75s;
 }
 
-
-
-header img{
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    width: 100%;
-    transform: scale(1);
-}
 
 
 .grid-layout{
@@ -146,10 +149,10 @@ header img{
     border: 1px solid black;
 }
 
-.carta-page img{
-    margin: 0;
-    padding: 0;
-    width: 250px;
+.carta-page {
+  background-color: black;
+  
+  
 
 }
 
@@ -175,6 +178,7 @@ header img{
     justify-content: space-between;
     align-items:center;
     height: 62px;
+    position: fixed;
   }
   
   .navbar .menu-items {
@@ -185,6 +189,7 @@ header img{
   .navbar .nav-container li {
     list-style: none;
     float: left;
+    z-index: 10;
     
    
   }
@@ -223,7 +228,7 @@ header img{
     top: 25px;
     left: auto;
     right: 40px;
-    z-index: 5;
+    z-index: 10;
     opacity: 0;
     cursor: pointer;
   }
@@ -281,6 +286,7 @@ header img{
     padding-left: -100px;
     visibility: hidden;
     opacity: 0;
+    z-index: 10;
     -webkit-transition: opacity 300ms ease-in, visibility 0s ease-in 300ms;
     transition: opacity 300ms ease-in, visibility 0s ease-in 300ms;
     text-align: left;
@@ -290,16 +296,18 @@ header img{
     margin-bottom: 1.2rem;
     font-size: 2.5rem;
     font-weight: 500;
+    z-index: 10;
     
   }
   
   
   .logo {
-    position: fixed;
+    position: absolute;
     float: left;
     top: 25px;
     right: 24px;
     left: 40px;
+   
     font-size: 1.2rem;
     color: white;
   }
@@ -310,6 +318,7 @@ header img{
     opacity: 1;
     -webkit-transition-delay: 300ms;
     transition-delay: 300ms;
+    z-index: 10;
   }
   
   .nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
@@ -328,6 +337,243 @@ header img{
     display: block;
   }
 
+  .CSS_slideshow {
+    display: block;
+    width: 800px;
+    height: 625px;
+    overflow: hidden;
+    margin: 0 auto;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    text-space-collapse: trim-inner;
+}
+.CSS_slideshow[data-show-indicators="true"][data-indicators-position="in"] {
+    -webkit-margin-after: -25px; /* Removes the space under the slideshow. Webkit only as only Webkit-based browsers will support the dots in the wrapper */
+}
+/* Defines animation timing function */
+.CSS_slideshow[data-animation-style] {
+    -moz-transition-timing-function: ease-in-out;
+    -webkit-transition-timing-function: ease-in-out;
+    transition-timing-function: ease-in-out;
+}
+    /* Inherit all animation properties from parent element */
+    .CSS_slideshow[data-animation-style] *,
+    .CSS_slideshow[data-show-buttons="true"][data-animation-style] label:before,
+    .CSS_slideshow[data-show-buttons="true"][data-animation-style] label:after {
+        -moz-transition-duration: inherit;
+        -webkit-transition-duration: inherit;
+        transition-duration: inherit;
+        -moz-transition-timing-function: inherit;
+        -webkit-transition-timing-function: inherit;
+        transition-timing-function: inherit;
+    }
+    /* WRAPPER */
+    .CSS_slideshow_wrapper {
+        display: block;
+        width: 800px;
+        height: 600px;
+        position: relative;
+        /* Styling */
+        text-align: center;
+    }
+        /* Indicators */
+        .CSS_slideshow[data-show-indicators="true"] input {
+            width: 10px;
+            height: 10px;
+            outline: none;
+            position: relative;
+            top: calc(100% + 7px);
+            -ms-transform: scale(1); /* Fallback for Internet Explorer: supports radio button resizing, does not support :after. Not necessary, put for readibility. */ 
+            -moz-transform: scale(0.6); /* Fallback for Firefox: does not radio button resizing, does not support :after */
+            -webkit-appearance: none; /* hide radio buttons for Webkit: supports :after */
+        }
+        .CSS_slideshow[data-show-indicators="true"] input:checked {
+            -ms-transform: scale(1.25); /* Fallback for Internet Explorer: supports radio button resizing, does not support :after */
+            -moz-transform: scale(0.9); /* Fallback for Firefox: it does not do radio button resizing, does not support :after */
+        }
+        /* Webkit-only goodness - for now */
+        .CSS_slideshow[data-show-indicators="true"] input:after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            width: 8px;
+            height: 8px;
+            border: 1px solid;
+            border-radius: 100%;
+            cursor: pointer;
+            z-index: 2;
+            -moz-transition-property: transform, background;
+            -webkit-transition-property: transform, background;
+            transition-property: transform, background;
+        }
+        .CSS_slideshow[data-show-indicators="true"][data-indicators-position="under"] input:after {
+            top: -2px;
+            background: rgba(0, 0, 0, 0);
+            border-color: rgb(0, 0, 0);
+        }
+        .CSS_slideshow[data-show-indicators="true"][data-indicators-position="in"] input:after {
+            top: -35px;
+            box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.25), 0 0 2px rgba(0, 0, 0, 0.25);
+            background: rgba(235, 235, 235, 0);
+            border-color: rgb(235, 235, 235);
+        }
+        .CSS_slideshow[data-show-indicators="true"] input:checked:after {
+            -webkit-transform: scale(1.25);
+        }
+        .CSS_slideshow[data-show-indicators="true"][data-indicators-position="under"] input:checked:after {
+            background: rgb(0, 0, 0)
+        }
+        .CSS_slideshow[data-show-indicators="true"][data-indicators-position="in"] input:checked:after {
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
+            background: rgb(235, 235, 235);
+        }
+        .CSS_slideshow:not([data-show-indicators="true"]) input {
+            display: none;
+        }
+        /* SLIDES */
+        .CSS_slideshow label {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+        }
+        .CSS_slideshow[data-animation-style="slide"] label {
+            -moz-transition-property: left;
+            -webkit-transition-property: left;
+            transition-property: left;
+        }
+        .CSS_slideshow label img {
+            width: 100%;
+            height: 100%;
+        }
+        /* Puts all the slides on the left... */
+        .CSS_slideshow label {
+            left: -100%;
+        }
+        /* ...except the ones coming after input:checked - those are put on the right... */
+        .CSS_slideshow input:checked ~ label {
+            left: 100%;
+        }
+        /* ...except the one coming directly after input:checked - this is our current slide and it's in the middle */
+        .CSS_slideshow input:checked + label {
+            left: 0;
+        }
+            /* PREV/NEXT ARROWS */
+            .CSS_slideshow[data-show-buttons="true"] label:before,
+            .CSS_slideshow[data-show-buttons="true"] label:after {
+                display: block;
+                position: absolute;
+                width: 60px;
+                height: 60px;
+                top: calc((100% - 60px) / 2);
+                /* Styling */
+                background: rgb(235, 235, 235);
+                font-size: 35px;
+                font-weight: 800;
+                font-family: Consolas;
+                line-height: 56px;
+                color: black;
+                z-index: 1;
+                cursor: pointer;
+            }
+            .CSS_slideshow[data-show-buttons="true"][data-animation-style="slide"] label:before,
+            .CSS_slideshow[data-show-buttons="true"][data-animation-style="slide"] label:after {
+                -moz-transition-property: left, right;
+                -webkit-transition-property: left, right;
+                transition-property: left, right;
+            }
+            .CSS_slideshow[data-show-buttons="true"] label:hover:before,
+            .CSS_slideshow[data-show-buttons="true"] label:hover:after {
+                /* Styling */
+                background: rgb(245, 245, 245);
+            }
+            /* Slides on the left */
+            /* Since the slides are on the left, we need to move the buttons 100% to the right */
+            .CSS_slideshow[data-show-buttons="true"] label:before {
+                right: -100%;
+                opacity: 0;
+                /* Styling */
+                content: '>'; /* next */
+            }
+            .CSS_slideshow[data-show-buttons="true"] label:after {
+                left: 100%;
+                opacity: 1;
+                /* Styling */
+                content: '<'; /* previous */
+            }
+            /* Slides on the right */
+            /* Since the slides are on the right, we need to move the buttons 100% to the left */
+            .CSS_slideshow[data-show-buttons="true"] input:checked ~ label:before {
+                right: 100%;
+                opacity: 1;
+            }
+            .CSS_slideshow[data-show-buttons="true"] input:checked ~ label:after {
+                left: -100%;
+                opacity: 0;
+                cursor: default;
+            }
+            /* Active slide */
+            /* And for the active slide - just usual positioning */
+            .CSS_slideshow[data-show-buttons="true"] input:checked + label:before {
+                right: 0;
+                opacity: 0;
+                cursor: default;
+            }
+            .CSS_slideshow[data-show-buttons="true"] input:checked + label:after {
+                left: 0;
+            }
+            /* Buttons positioning */
+            .CSS_slideshow[data-show-buttons="true"] label:after {
+                z-index: 3; /* move "previous" buttons forward... */
+            }
+            .CSS_slideshow[data-show-buttons="true"] input:checked ~ label:after {
+                z-index: 1; /* ...except the one for an active slide - this should be hidden - causes the "previous" arrow from the previous slide to be on top */
+            }
+            .CSS_slideshow[data-show-buttons="true"] input:checked + label + input + label:before {
+                z-index: 3; /* move "next" button one slide ahead forward - causes the "next" arrow from the next slide to be on top */
+            }
+            /* WRAP ARROWS */
+            /* We'll reuse "previous" arrow from the first slide and "next" arrow from the last to make "wrap" buttons, based on roughly the same principles */
+            .CSS_slideshow[data-show-buttons="true"][data-show-wrap-buttons="true"] label:first-of-type:before,
+            .CSS_slideshow[data-show-buttons="true"][data-show-wrap-buttons="true"] label:last-of-type:after {
+                z-index: 2 !important;
+                opacity: 1 !important;
+                cursor: pointer !important;
+                /* Styling */
+                letter-spacing: -9px;
+                text-align: left;
+                padding-left: 14px;
+                width: 46px;
+            }
+            .CSS_slideshow[data-show-buttons="true"][data-show-wrap-buttons="true"] label:first-of-type:before {
+                content: '<<'; /* jump to first */
+                right: 0 !important;
+            }
+            .CSS_slideshow[data-show-buttons="true"][data-show-wrap-buttons="true"] input:not(:checked) + label:first-of-type:before {
+                right: -100% !important;
+            }
+            .CSS_slideshow[data-show-buttons="true"][data-show-wrap-buttons="true"] label:last-of-type:after {
+                content: '>>'; /* jump to last */
+                left: 0 !important;
+            }
+            .CSS_slideshow[data-show-buttons="true"][data-show-wrap-buttons="true"] input:not(:checked) + label:last-of-type:after {
+                left: -100% !important;
+            }
+
+
+
+#license {
+    margin-top: 3em;
+    text-align: center;
+    font-size: 10px;
+}
+    #license * {
+        font-size: 10px;
+    }
 
 /*
 

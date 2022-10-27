@@ -20,10 +20,12 @@
 <body>
     <div class="head" id="header">
         <div class="logo">
-            <a href="#header">Logo</a>
+            <div id="logo">
+                <a href="#header">
+                    <img src="img/TBC-logo.png" width="290" height="110" alt="Haz clic aquí para volver a la página de inicio">
+                </a>
+            </div>
         </div>
-
-
         <nav>
             <div class="navbar">
               <div class="container nav-container">
@@ -33,16 +35,12 @@
                     <span class="line line2"></span>
                     <span class="line line3"></span>
                   </div>  
-                <div class="logo">
-                  <div id="logo">
-                      <img src="TBC-logo.png" width="290" height="110"
-                      alt="Haz clic aquí para volver a la página de inicio">
-                      </div>
-                </div>
+                
+                
                 <div class="menu-items">
                   <li><a href="#header">Inicio</a></li>
-                  <li><a href="#section2">Carta</a></li>
-                  <li><a href="#section3">Reserva</a></li>
+                  <li><a href="#section1">Carta</a></li>
+                  <li><a href="#section2">Reserva</a></li>
                   <li><a href="#section4">Contacto</a></li>
                   <li><a href="#section5">Galeria</a></li>
                 </div>
@@ -53,14 +51,18 @@
     </div>
 
     <header>
+        <video id="background-video" autoplay loop muted poster="img/video.mp4">
+            <source src="img/video.mp4" type="video/mp4">
+        </video>
         <div class="boton-carta">
-            <a href="#" >
+            <a href="#section2" >
                 <span id="span1"></span>
                 <span id="span2"></span>
                 <span id="span3"></span>
                 <span id="span4"></span>
-                CARTA
+                RESERVA
             </a>
+           
         </div>
           
         
@@ -70,11 +72,25 @@
         
         
         <section class="content carta-page" id="section1">
-            <img src="img/sinfondo.png">
+            <div class="CSS_slideshow" data-show-indicators="true" data-indicators-position="in" data-show-buttons="true" data-show-wrap-buttons="true" data-animation-style="slide" style="-moz-transition-duration: 0.3s; -webkit-transition-duration: 0.3s; transition-duration: 0.3s;">
+                <div class="CSS_slideshow_wrapper">
+                    <input type="radio" name="css3slideshow" id="slide1" checked />
+                        <label for="slide1"><img src="img/cheeseb.png"  alt="Cheeseburger"/></label>
+                        <input type="radio" name="css3slideshow" id="slide2" />
+                        <label for="slide2"><img src="img/veg.png" alt="Hamburguesa vegetariana"/></label>
+                        <input type="radio" name="css3slideshow" id="slide3" />
+                        <label for="slide3"><img src="img/fries.png" alt="Patatas de la casa con salsa"/></label>
+                        <input type="radio" name="css3slideshow" id="slide4" />
+                        <label for="slide4"><img src="img/pancakes.png" alt="Tortitas americanas" /></label>
+                        <input type="radio" name="css3slideshow" id="slide5" />
+                        <label for="slide5"><img src="img/shake.png" alt="Batido de chocolate"/></label> 
+                </div>
+            </div>
+
         </section>
         <section class="content reservas-page" id="section2">
-            Menu2
-            <h1>Menu2</h1>
+            Formulario reserva
+            <h1>Formulario reserva</h1>
         </section>
         <section class="content contacto-page" id="section3">
             Menu3
